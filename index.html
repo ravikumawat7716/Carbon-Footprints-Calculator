@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            CO2 Emissions Calculator
+        </title>
+        <script type="text/JavaScript">
+            var emissions = 0;
+            function calc_1() {
+                n = document.getElementById("members").value;
+                console.log(n)
+                if(n){
+                    answer = eval(n*1.850);
+                    document.getElementById("members_emissions").value = answer;
+                    emissions = emissions + answer ;
+                    
+                }
+            }
+
+            function calc_2() {
+                n = document.getElementById("pv_petrol").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*119.60)/1000000);
+                    document.getElementById("pv_petrol_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_3() {
+                n = document.getElementById("pv_diesel").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*132)/1000000);
+                    document.getElementById("pv_diesel_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_4() {
+                n = document.getElementById("pv_cng").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*112.60)/1000000);
+                    document.getElementById("pv_cng_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_5() {
+                n = document.getElementById("bus").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*53.60)/1000000);
+                    document.getElementById("bus_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_6() {
+                n = document.getElementById("taxi").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*359)/1000000);
+                    document.getElementById("taxi_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_7() {
+                n = document.getElementById("autorickshaw").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*54)/1000000);
+                    document.getElementById("autorickshaw_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_8() {
+                n = document.getElementById("train").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*100)/1000000);
+                    document.getElementById("train_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_9() {
+                n = document.getElementById("flight1").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*92)/1000);
+                    document.getElementById("flight1_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_10() {
+                n = document.getElementById("flight2").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*345)/1000);
+                    document.getElementById("flight2_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_11() {
+                n = document.getElementById("flight3").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*747.60)/1000);
+                    document.getElementById("flight3_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_12() {
+                n = document.getElementById("lpg").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*42.50)/1000);
+                    document.getElementById("lpg_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_13() {
+                n = document.getElementById("cng").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*1.82)/1000);
+                    document.getElementById("cng_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_14() {
+                n = document.getElementById("electricity").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*850)/1000000);
+                    document.getElementById("electricity_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_15() {
+                n = document.getElementById("plastic_bag").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*1.58)/1000);
+                    document.getElementById("plastic_bag_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_16() {
+                n = document.getElementById("solid_waste").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*1.1023)/1000);
+                    document.getElementById("solid_waste_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function calc_17() {
+                n = document.getElementById("liquid_waste").value;
+                console.log(n)
+                if(n){
+                    answer = eval((n*850)/1000000);
+                    document.getElementById("liquid_waste_emissions").value = answer;
+                    emissions = emissions + answer ;
+                }
+            }
+
+            function total_emissions(){
+                var result = "Your Total Emissions : " + emissions + " Tonns" ;
+                document.getElementById("final_result").innerHTML=result;
+                
+
+  }
+
+        </script>
+
+    </head>
+    <body>
+        <h1 align="center">Measure Your Carbon Footprints </h1>
+        <h3 align="left">Individual/Family</h3>
+       <div>
+         How many people live in your home?<input type ="text" style="margin: 6px " id="members" class="form-control" required="true" placeholder onblur="javascript:calc_1()"></input><input type ="text" style="margin: 6px " id="members_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <h3 align="left">Transport</h3>
+        <h4>How many Kms do yo travel by following vehicles every year?</h4>
+        <div>
+            Personal Vehicle (Petrol)?<input type ="text" style="margin: 6px " id="pv_petrol" class="form-control" required="true" placeholder onblur="javascript:calc_2()"></input><input type ="text" style="margin: 6px " id="pv_petrol_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Personal Vehicle (Diesel)?<input type ="text" style="margin: 6px " id="pv_diesel" class="form-control" required="true" placeholder onblur="javascript:calc_3()"></input><input type ="text" style="margin: 6px " id="pv_diesel_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Personal Vehicle (CNG)?<input type ="text" style="margin: 6px " id="pv_cng" class="form-control" required="true" placeholder onblur="javascript:calc_4()"></input><input type ="text" style="margin: 6px " id="pv_cng_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Public/Local Bus?<input type ="text" style="margin: 6px " id="bus" class="form-control" required="true" placeholder onblur="javascript:calc_5()"></input><input type ="text" style="margin: 6px " id="bus_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Taxi?<input type ="text" style="margin: 6px " id="taxi" class="form-control" required="true" placeholder onblur="javascript:calc_6()"></input><input type ="text" style="margin: 6px " id="taxi_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Autoricksaw?<input type ="text" style="margin: 6px " id="autorickshaw"  class="form-control" required="true" placeholder onblur="javascript:calc_7()"></input><input type ="text" style="margin: 6px " id="autorickshaw_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Train?<input type ="text" style="margin: 6px " id="train" class="form-control" required="true" placeholder onblur="javascript:calc_8()"></input><input type ="text" style="margin: 6px " id="train_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <h3 align="left">Holidays & Flights</h3>
+        <h4>How many return flights in these categories have you taken within the past 1 year? (Only include private flying, not work related)*</h4>
+        <div>
+            Short distance flights(0-1000KM)<input type ="text" style="margin: 6px " id="flight1" class="form-control" required="true" placeholder onblur="javascript:calc_9()"></input><input type ="text" style="margin: 6px " id="flight1_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Medium distance flights(1001-5000KM)<input type ="text" style="margin: 6px " id="flight2" class="form-control" required="true" placeholder onblur="javascript:calc_10()"></input><input type ="text" style="margin: 6px " id="flight2_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        <div>
+            Large distance flights(5001KM or more)<input type ="text" style="margin: 6px " id="flight3" class="form-control" required="true" placeholder onblur="javascript:calc_11()"></input><input type ="text" style="margin: 6px " id="flight3_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <h3 align="left">Domestic Emissions</h3>
+        
+        <div>
+            How many LPG cylinder do you use per year?<input type ="text" style="margin: 6px " id="lpg" class="form-control" required="true" placeholder onblur="javascript:calc_12()"></input><input type ="text" style="margin: 6px " id="lpg_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <div>
+            Amount of CNG used at home (m3)<input type ="text" style="margin: 6px " id="cng" class="form-control" required="true" placeholder onblur="javascript:calc_13()"></input><input type ="text" style="margin: 6px " id="cng_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <div>
+            Electricity used in a Year (kWh)<input type ="text" style="margin: 6px " id="electricity" class="form-control" required="true" placeholder onblur="javascript:calc_14()"></input><input type ="text" style="margin: 6px " id="electricity_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+        
+        <h3 align="left">Waste Management</h3>
+        <div>
+            Number of plastic bags used per year<input type ="text" style="margin: 6px " id="plastic_bag" class="form-control" required="true" placeholder onblur="javascript:calc_15()"></input><input type ="text" style="margin: 6px " id="plastic_bag_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <div>
+            Solid Waste in Kg per Year<input type ="text" style="margin: 6px " id="solid_waste" class="form-control" required="true" placeholder onblur="javascript:calc_16()"></input><input type ="text" style="margin: 6px " id="solid_waste_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <div>
+            Liquid waste in Kg per Year<input type ="text" style="margin: 6px " id="liquid_waste" class="form-control" required="true" placeholder onblur="javascript:calc_17()"></input><input type ="text" style="margin: 6px " id="liquid_waste_emissions" class="form-control" placeholder readonly ></input> Tonns 
+        </div>
+
+        <div align="center" style="padding:20px;">
+            <input type="submit" onclick='total_emissions()' value="Calculate Total Emissions">
+        </div>
+
+        <div id>
+            <h2 id="final_result">
+
+            </h2>
+        </div>
+        <br>
+        <br>
+        <div align="center">
+            Made with ❤️ by Ravi Kumawat
+        </div>
+
+    </body>
+    
+</html>
