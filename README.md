@@ -1,4 +1,4 @@
 # Carbon-Footprints-Calculator
-Calculate you footprints 
+Calculate your footprints 
 
 
