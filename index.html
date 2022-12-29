@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            CO2 Emissions Calculator
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/JavaScript" src="script.js"></script>
+
+    </head>
+    <body style="background-color: #97d439; color:black;">
+        <h1 align="center">Measure Your Carbon Footprints </h1>
+        <table align="center">
+            <tr>
+                <th colspan="3">
+                    <h3>Individual/Family</h3>
+                </th>
+            </tr>
+            <tr>
+       <td>
+         How many people live in your home?
+        </td>
+        <td>
+            <input type ="number" style="margin: 6px;" id="members" class="form-control" required="true" placeholder onblur="javascript:calc_1()"></input>
+        </td>
+        <td>
+         <input type ="text" style="color:#f10d0d; margin: 6px; background-color: #d9d9d9;"   id="members_emissions" class="form-control" placeholder readonly ></input>Tonns 
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3">
+        <h3>Transport</h3>
+        <h4>How many Kms do yo travel by following vehicles every year?</h4>
+    </th>
+    </tr>
+
+        
+        <tr>
+            <td>
+                Personal Vehicle (Petrol)?
+            </td>
+            <td>
+                <input type ="number" style="margin: 6px " id="pv_petrol" class="form-control" required="true" placeholder onblur="javascript:calc_2()"></input>
+            </td>
+            <td>
+                <input type ="text" style="margin: 6px " id="pv_petrol_emissions" class="form-control" placeholder readonly ></input> Tonns 
+            </td>
+                
+        </tr>
+        <tr>
+            <td>
+                Personal Vehicle (Diesel)?
+            </td>
+            <td>
+                <input type ="number" style="margin: 6px " id="pv_diesel" class="form-control" required="true" placeholder onblur="javascript:calc_3()"></input>  
+            </td>
+            <td>
+                <input type ="text" style="margin: 6px " id="pv_diesel_emissions" class="form-control" placeholder readonly ></input> Tonns 
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Personal Vehicle (CNG)? </td>
+            <td><input type ="number" style="margin: 6px " id="pv_cng" class="form-control" required="true" placeholder onblur="javascript:calc_4()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="pv_cng_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <td>Public/Local Bus?</td>
+            <td><input type ="number" style="margin: 6px " id="bus" class="form-control" required="true" placeholder onblur="javascript:calc_5()"></input></td>
+                <td><input type ="text" style="margin: 6px " id="bus_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <td>Taxi?</td>
+            <td><input type ="number" style="margin: 6px " id="taxi" class="form-control" required="true" placeholder onblur="javascript:calc_6()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="taxi_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <td>Autoricksaw? </td>
+            <td><input type ="number" style="margin: 6px " id="autorickshaw"  class="form-control" required="true" placeholder onblur="javascript:calc_7()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="autorickshaw_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <td>Train? </td>
+            <td><input type ="number" style="margin: 6px " id="train" class="form-control" required="true" placeholder onblur="javascript:calc_8()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="train_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <th colspan="3">
+        <h3>Holidays & Flights</h3>
+        <p>How many return flights in these categories have you taken within the past 1 year? <br>
+             (Only include private flying, not work related)*</p>
+        </th>
+        <tr>
+
+        
+        <tr>
+            <td>Short distance(0-1000KM)</td>
+            <td><input type ="number" style="margin: 6px " id="flight1" class="form-control" required="true" placeholder onblur="javascript:calc_9()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="flight1_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <td>Medium distance(1001-5000KM)</td>
+            <td><input type ="number" style="margin: 6px " id="flight2" class="form-control" required="true" placeholder onblur="javascript:calc_10()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="flight2_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+           <td> Large distance(5001KM or more)</td>
+            <td><input type ="number" style="margin: 6px " id="flight3" class="form-control" required="true" placeholder onblur="javascript:calc_11()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="flight3_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <th colspan="3">
+                <h3>Domestic Emissions</h3>
+            </th>
+        </tr>
+        
+        
+        <tr>
+            <td>LPG cylinder used per year?</td>
+            <td>
+                <input type ="number" style="margin: 6px " id="lpg" class="form-control" required="true" placeholder onblur="javascript:calc_12()"></input>
+            </td>
+           <td> <input type ="text" style="margin: 6px " id="lpg_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+
+        <tr>
+           <td> Amount of CNG used at home (m3)</td>
+           <td> <input type ="number" style="margin: 6px " id="cng" class="form-control" required="true" placeholder onblur="javascript:calc_13()"></input></td>
+           <td> <input type ="text" style="margin: 6px " id="cng_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+
+        <tr>
+           <td> Electricity used in a Year (kWh)</td>
+           <td> <input type ="number" style="margin: 6px " id="electricity" class="form-control" required="true" placeholder onblur="javascript:calc_14()"></input></td>
+           <td> <input type ="text" style="margin: 6px " id="electricity_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+        <tr>
+            <th colspan="3">
+        <h3>Waste Management</h3>
+    </th>
+    </tr>
+        <tr>
+           <td> Number of plastic bags used per year</td>
+           <td> <input type ="number" style="margin: 6px " id="plastic_bag" class="form-control" required="true" placeholder onblur="javascript:calc_15()"></input></td>
+           <td> <input type ="text" style="margin: 6px " id="plastic_bag_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+
+        <tr>
+           <td> Solid Waste in Kg per Year</td>
+            <td><input type ="number" style="margin: 6px " id="solid_waste" class="form-control" required="true" placeholder onblur="javascript:calc_16()"></input></td>
+           <td> <input type ="text" style="margin: 6px " id="solid_waste_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+
+        <tr>
+           <td> Liquid waste in Kg per Year</td>
+            <td><input type ="number" style="margin: 6px " id="liquid_waste" class="form-control" required="true" placeholder onblur="javascript:calc_17()"></input></td>
+            <td><input type ="text" style="margin: 6px " id="liquid_waste_emissions" class="form-control" placeholder readonly ></input> Tonns </td>
+        </tr>
+    
+
+        <tr><th colspan="3"><div align="center" style="padding:20px;">
+            <input type="submit" onclick='total_emissions()' value="Calculate Total Emissions">
+        </div></th></tr>
+    </table>
+        <div align="center">
+            <h2 id="final_result">
+
+            </h2>
+            <h3 id="finalh">
+
+            </h3>
+            <h3 id="finalt">
+
+            </h3>
+            <h3 id="finalw">
+
+            </h3>
+        </div>
+    
+        <br>
+        <br>
+        <div align="center">
+            Made with ❤️ by Ravi Kumawat
+        </div>
+
+    </body>
+    
+</html>
