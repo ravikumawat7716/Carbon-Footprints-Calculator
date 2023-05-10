@@ -1,9 +1,11 @@
 body{
-    background-color: #97d439; color:black;
+    background-image: url("./bgpic.jpg"); color:black;
 }
 table,tr,td{
+    background-color: rgba(151, 212, 57, 0.4);
     border:1px solid black; border-collapse: collapse; text-align: left; border-style: groove;
 }
 th{
+    background-color: rgba(151, 212, 57, 0.4);
     border:1px solid black; border-collapse: collapse; text-align: center; border-style: groove;
 }
